@@ -32,6 +32,7 @@ kramdown:
   input: GFM
   syntax_highlighter: rouge
 
+duoshuo_shortname: cjw
 # port
 # port: 1234
 
