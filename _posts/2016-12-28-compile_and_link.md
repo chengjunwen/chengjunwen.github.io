@@ -24,11 +24,13 @@ excerpt:
     
 &emsp;在linux系统上，把一个源文件(hello.c) 转换成 可执行文件(hello)需要四个步骤:
 
-1. 预处理 ，preprocessing  
- 	预处理是处理 ‘#’开头的代码行，例如 #include <stdio.h> ,预处理器会读取系统头文件 stdio.h里面的全部文件 并插入到hello.c里,这一步生成的文件还是文本的 program，后缀  .i 。   
+1. 预处理 ，preprocessing   
+ 	预处理是处理 ‘#’开头的代码行，例如 #include <stdio.h> ,预处理器会读取系统头文件 stdio.h里面的全部文件 并插入到hello.c里,这一步生成的文件还是文本的 program，后缀  .i 。    
+
 ```
     	gcc -E hello.c -o test.i
 ```        
+
 2. 编译 ， compilation   
 	编译是指将文本的程序代码(hello.i)编译成汇编语言的程序代码(hello.s)。hello.s也是text file.汇编语言以一种人能理解的方式描述了机器语言指令。对于不同的编译器和不同的语言， 汇编语言提供了一种通用的语言模式。  
 
