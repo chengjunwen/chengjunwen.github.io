@@ -57,4 +57,4 @@ MOVS 是指符号位扩展，也就是将空缺的高位补成符号位。关于
 
 <p><img src="http://i1156.photobucket.com/albums/p568/chengjunwen/ComputerSysterm/stack_zpsoxpcsrxs.png" wight="500" height="200"></p> 
 
-
+%rsp 是stack pointer， 指向栈顶。
