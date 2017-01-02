@@ -53,7 +53,7 @@ MOVS 是指符号位扩展，也就是将空缺的高位补成符号位。关于
 程序运行时，会有一个 stack内存用来存储数据，这个栈是向下增长的，也就是说栈顶是低地址。程序对于栈入栈出栈的操作指令也是一种 MOV 指令：  
 
 1. pushq S，将数据 S 压入栈顶。  
-2. popq D，从栈顶删除数据 D。  
+2. popq D，从栈顶删除数据并将该数据写入 D。  
 
 <p><img src="http://i1156.photobucket.com/albums/p568/chengjunwen/ComputerSysterm/stack_zpsoxpcsrxs.png" wight="500" height="200"></p> 
 
