@@ -73,12 +73,15 @@ excerpt:
 	
     	LDFLAGS=-L/usr/lib -L/path/to/your/lib
     	LIBS = -lpthread -liconv
-  关于编译过程，假设libhello.a和main.c在一个目录下：  
+
+	关于编译过程，假设libhello.a和main.c在一个目录下：  
+	
 		gcc -c main.c
 		gcc -o hello main.o libhello.a
     	//gcc -o hello main.o -L. -lhello  //可替代上句
 		//gcc -o hello main.c -L. -lhello  //可替代一二句
-  编译时，非系统库不能放在main文件之前，否则会报错未定义。  
+
+	编译时，非系统库不能放在main文件之前，否则会报错未定义。  
   
 ##### 2. 动态库
 
