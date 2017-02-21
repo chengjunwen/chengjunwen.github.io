@@ -62,3 +62,37 @@ excerpt:
 ```
     gcc hello.o  -o hello
 ```
+
+#### 静态库(.a) 和 动态库(.so)
+
+##### 1. 静态库：  
+
+* 在程序编译的时加载到程序里，所以程序运行时删掉.a文件也可以运行。  
+* 编译时需要指定库文件路径(通过-L参数传递)，也要指定库名(-l)，  
+	eg，Makefile里通常用LDFLAGS指定库路径，LIBS指定库名：  
+	
+    	LDFLAGS=-L/usr/lib -L/path/to/your/lib
+    	LIBS = -lpthread -liconv
+  关于编译过程，假设libhello.a和main.c在一个目录下：  
+		gcc -c main.c
+		gcc -o hello main.o libhello.a
+    	//gcc -o hello main.o -L. -lhello  //可替代上句
+		//gcc -o hello main.c -L. -lhello  //可替代一二句
+  编译时，非系统库不能放在main文件之前，否则会报错未定义。  
+  
+##### 2. 动态库
+
+* 在程序运行时才加载到程序中，所以运行时也需要库文件的存在
+* 编译时，和静态库一样，需要指定动态库库路径和库名
+
+静态库函数改变后，调用静态库的源码也需要重新编译
+动态库函数改变后，调用动态库的源码不需要重新编译
+
+
+
+
+
+
+
+
+
