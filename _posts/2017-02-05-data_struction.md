@@ -1,3 +1,11 @@
+---
+layout: post
+title:  "二叉查找数/AVL树"
+date:   2017-02-05 16:29:33 +0800
+categories:
+excerpt:
+---
+
 二叉查找树、平衡二叉查找树、红黑树、B树
 
 #### 二叉查找树
