@@ -33,7 +33,7 @@ excerpt:
 ![](/images/binarytree/leftRotationEg.jpg)
 
 ##### 右旋： right rotation
-当新插入节点在左子树的左节点上时，需要进行左旋，**找到距离插入节点最近的一个不平衡节点**，将该节点向右边旋转：  
+当新插入节点在左子树的左节点上时，需要进行右旋，**找到距离插入节点最近的一个不平衡节点**，将该节点向右边旋转：  
 ![](/images/binarytree/rightRotation.jpg)  
 ![](/images/binarytree/rightRotationEg.jpg)  
 
