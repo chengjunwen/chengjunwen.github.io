@@ -12,7 +12,7 @@ excerpt:
 
 ![](http://i1156.photobucket.com/albums/p568/chengjunwen/AM/am_zpsl2blsvvr.png)
 
-&emsp;该问题是一个非凸优化问题，我们可以通过 gradient ascent 找到局部最优解。类似于知道input x 时优化 θ 的过程。先随机一个 输入 x值，计算 hij 的值，然后求hij对于 x 的倒数，利用gradient ascent算法对x 进行更新直至收敛。一个AM可视化的例子如下：  
+&emsp;该问题是一个非凸优化问题，我们可以通过 gradient ascent 找到局部最优解。类似于知道input x 时优化 θ 的过程。先随机一个 输入 x值，计算 hij 的值，然后求hij对于 x 的倒数，利用gradient ascent算法对x 进行更新直至收敛。一个手写体识别的AM可视化的例子如下：  
 <p align='center'><img src='http://i1156.photobucket.com/albums/p568/chengjunwen/AM/AMresult_zpsfgzsvydt.png'></p>
 上图中，第一行的三列分别是用AM对DBN网络的 1st layer、2nd layer、3rdlayer的36个节点单元的可视化结果。  
 然后 第二行的三列分别是用AM对SDAE网络的 1st layer、2nd layer、3rdlayer的36个节点单元的可视化结果。  
