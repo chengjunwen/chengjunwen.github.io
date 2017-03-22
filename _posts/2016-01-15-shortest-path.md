@@ -40,7 +40,7 @@ excerpt:
 * w(u,v)表示 u，v两点之间的距离  
 
 关于松弛计算概念：  
-&emsp; 对某一条边e(u,v)，如果 d(u) > d(u) + w(u,v)，则 d(v) = d(u) + w(u,v)  
+&emsp; 对某一条边e(u,v)，如果 d(v) > d(u) + w(u,v)，则 d(v) = d(u) + w(u,v)  
 
 算法步骤:  
 
