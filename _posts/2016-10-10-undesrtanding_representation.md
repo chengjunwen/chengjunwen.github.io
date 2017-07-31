@@ -13,7 +13,7 @@ excerpt:
 ![](/images/old/am.png)
 
 &emsp;该问题是一个非凸优化问题，我们可以通过 gradient ascent 找到局部最优解。类似于知道input x 时优化 θ 的过程。先随机一个 输入 x值，计算 hij 的值，然后求hij对于 x 的倒数，利用gradient ascent算法对x 进行更新直至收敛。一个手写体识别的AM可视化的例子如下：  
-<p align='center'><img src='/images/old/oldresult.png'></p>
+<p align='center'><img src='/images/old/AMresult.png'></p>
 上图中，第一行的三列分别是用AM对DBN网络的 1st layer、2nd layer、3rdlayer的36个节点单元的可视化结果。  
 然后 第二行的三列分别是用AM对SDAE网络的 1st layer、2nd layer、3rdlayer的36个节点单元的可视化结果。  
 
@@ -21,7 +21,7 @@ excerpt:
 
 &emsp;code inversion,这个方法和AM算法有着异曲同工之妙，对于一个已经训练好的参数固定的网络，假设某个隐藏层的表达representation函数为 Φ，则Φ是θ和输入X的函数。给定网络参数θ和待逆推的表达 Φ0=Φ(x0)，来计算一个输入image sample,使这个输入图片 x 所生成的表达和给定的表达 Φ 尽量相似。最小化下面这个公式：  
 
-![](/images/old/code.png)  
+![](/images/old/code_inversion.png)  
 
 通过最小化这个式子，就可以使输入图片 X 和 原图片 X0 在那个给定的高维表达上尽量的相接近。     
 上式中,loss 函数l是比较输入图片生成的表达 Φ(X) 和给定的表达 Φ(X0).loss的计算方式如下：  
