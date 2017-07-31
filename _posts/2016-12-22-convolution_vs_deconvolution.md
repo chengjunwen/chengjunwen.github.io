@@ -39,8 +39,8 @@ excerpt:
 
 1. 上面提到的 full convolution 其实就是一种反卷积，如果步长为一，如下图所示，蓝色部分是原图 2\*2， 白色部分是 padding的：  
 
-	![deconv1](/images/conv/YyCu2_zpsatr5yh42.gif)
+	![deconv1](/images/conv/YyCu2.gif)
 2. 还有一种，并不是直接在原图四周padding，而是一种插入时的padding，如下，蓝色部分是原图 2\*2， 白色部分是 padding的:  
 
-	![deconv2](/images/conv/f2RiP_zpsp7xx7quy.gif)
+	![deconv2](/images/conv/f2RiP.gif)
 
