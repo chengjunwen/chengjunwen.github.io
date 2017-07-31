@@ -26,17 +26,17 @@ excerpt:
 
 上一节提到了对于给定策略，如何计算状态值函数Vπ和动作值函数qπ，方程式如下：  
 
-![](http://i1156.photobucket.com/albums/p568/chengjunwen/reinforcement3/vvalue_zpsis1rfzn2.gif)  
+![](/images/rel3/vvalue_zpsis1rfzn2.gif)  
 
-![](http://i1156.photobucket.com/albums/p568/chengjunwen/reinforcement3/qvalue_zpsomknernn.gif)  
+![](/images/rel3/qvalue_zpsomknernn.gif)  
 
 这就是bellman exception equation， 从式子可以看出来，当前状态的值函数Vπ和下一状态的值函数相关。  
 
 #### 贝尔曼优化方程：Bellman Optimal Equation
 &emsp;关于寻找最优策略，是指时所有状态值函数最大的策略,而关于最优策略下的优化状态值函数和优化动作值函数，是满足bellman optimal equation方程的，也就是如下式两个方程：  
 
-![](http://i1156.photobucket.com/albums/p568/chengjunwen/reinforcement3/svalueMax_zpsfusxmnad.png)  
-![](http://i1156.photobucket.com/albums/p568/chengjunwen/reinforcement3/qvalueMax_zpsuulmzqwq.png)  
+![](/images/rel3/svalueMax.png)  
+![](/images/rel3/qvalueMax.png)  
 
 有了贝尔曼期望方程和贝尔曼优化方程，我们就可以利用动态规划求解法求解MDP的最优策略了，求解方法有策略迭代和值迭代两种。  
 
@@ -55,11 +55,11 @@ V1——>V2——>...——>Vπ
 2. 进行迭代，也就是重复步骤 3直至收敛。对于每一次迭代 k+1，进行步骤 3 :  
 3. 遍历状态，对每一个状态 s in S，都进行以下操作:  	
 	* 采用下面式子对状态 s 的状态值函数进行更新。  
-![](http://i1156.photobucket.com/albums/p568/chengjunwen/reinforcement3/valueItevPolicy_zpsmwhiy8w3.png)     
+![](/images/rel3/valueItevPolicy.png)     
 4. 最后收敛至 Vπ,就是该策略的状态值函数。  
 
 最后，举个栗子，关于策略估计，假设一个4\*4格子，左上角和右下角是终止状态点，非终止状态14个，明日歌状态可以采取的动作是移到相邻的格子(碰壁则留在原状态)，上下左右移动概率相等，都是0.25，转到终止态回报为0，其他任意转移的reward都是 -1，γ是1。  
-<p align='center'><img src='http://i1156.photobucket.com/albums/p568/chengjunwen/reinforcement3/example11_zpsioiycelx.png'></p>   
+<p align='center'><img src='/images/rel3/example11.png'></p>   
 在k=0，初始状态是随机策略，V(s)全部随机为0.   
 k=1, 第一行第二列， v = 0.25\*(-1+0)+ 0.25\*(-1+0)+ 0.25\*(-1+0)+ 0.25\*(-1+0)= -1.0 ；   
 k=2, 第一行第二列， v = 0.25\*(-1+0)+ 0.25\*(-1-1)+ 0.25\*(-1-1)+ 0.25\*(-1-1)= -1.75 = -1.7；     
@@ -72,7 +72,7 @@ k=2，第一行第三列， v = 0.25\*(-1-1)+ 0.25\*(-1-1)+ 0.25\*(-1-1)+ 0.25\*
 对于一个确定的策略，对每个状态，遍历这个状态的所有可能动作，采用贪心算法来获得新的优化的策略，步骤如下：  
 
 1. 遍历状态 s， 对每个状态 s in S，采用下面式子进行更新。  
-![](http://i1156.photobucket.com/albums/p568/chengjunwen/reinforcement3/policyImpro_zpsowwf6oyg.png)   
+![](/images/rel3/policyImpro.png)   
 
 ####  2.3 策略迭代
 
@@ -86,7 +86,7 @@ k=2，第一行第三列， v = 0.25\*(-1-1)+ 0.25\*(-1-1)+ 0.25\*(-1-1)+ 0.25\*
 	对每个状态进行改进，找动作值函数最大的动作来改进策略获得新策略。  
 5. 最后策略收敛稳定时，返回的值函数和策略就是想要的结果。 
 整个过程图解如下：  
-![](http://i1156.photobucket.com/albums/p568/chengjunwen/reinforcement3/policyIteFigure_zpspyfqrg0a.png)  
+![](/images/rel3/policyIteFigure.png)  
 
 看图，策略迭代的过程就是根据策略迭代计算这个策略下每个状态的值函数，然后根据状态值函数来，利用贪心算法改进策略，不断的重复这两个步骤，最后收敛，所得到的就是优化策略。  
 
@@ -100,13 +100,13 @@ V1——>V2——>...——>V\*
 2. 迭代操作，即重复步骤 3直至收敛。对于每一次迭代 k+1 :  
 3. 对每一个状态 s in S，都进行以下操作:  
     * 采用下面式子对状态 s 的状态值函数进行更新。  
-![](http://i1156.photobucket.com/albums/p568/chengjunwen/reinforcement3/valueIte_zpsumzafckr.png)  
+![](/images/rel3/valueIte.png)  
 
 4. 最后收敛的输出策略就是所求最优策略 π\*。  
 
 一般来说，迭代次数很多才会收敛，实际计算的时候，可以根据精度需求来设置收敛阈值。  
 举个栗子，计算最短路径， 只有终止态回报为0， 其他都是-1，γ=1，如下图所示：  
-<p align='center'><img src='http://i1156.photobucket.com/albums/p568/chengjunwen/reinforcement3/example2_zpsvarcbkea.png'></p>    
+<p align='center'><img src='/images/rel3/example2.png'></p>    
 第一次迭代，初始化最大V值都是 V = 0；  
 第二次迭代，第一行第二列，下一状态不管往哪走，最大V值都是 V=-1 + 1\*(0) = -1;  
 第三次迭代，第一行第二列， 向左走到终止态时，当前状态V最大， V = -1 + 1\*(0) = -1；  
@@ -118,5 +118,5 @@ V1——>V2——>...——>V\*
 
 通过策略迭代和值迭代都可以求出最优策略。下面有个表格总结以下完整环境知识下的MDP各种问题的求解：   
 
-![](http://i1156.photobucket.com/albums/p568/chengjunwen/reinforcement3/conclusion_zpsux801lag.png)
+![](/images/rel3/conclusion.png)
 

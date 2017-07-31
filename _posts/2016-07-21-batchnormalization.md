@@ -32,38 +32,38 @@ excerpt:
 #### 1. 近似白化处理
 
 &emsp;就是下面的这个公式，简单粗暴，大家肯定在其他地方的都用过，对每一个神经元进行归一化处理，就是简单的将数据变成0均值，1方差:     
-&emsp;![](http://i1156.photobucket.com/albums/p568/chengjunwen/batchNormaliza/normaliza_zpstcrulssi.png)  
+&emsp;![](/images/old/normaliza.png)  
 
 但是，其实简单的归一化处理，效果并不好，它会改变前面这一层的所学习的特征的表达。比方说，有一个sigmoid曲线分布的输入，如果进行简单的归一化，原本分布在非线性区域(s曲线两端)的就被强制归一化到线性区域(s曲线中间)。想要解决这个问题，归一化处理必须是一个恒等的变换，特征表达不能改变，由此，就产生了BN算法。  
 
 #### 2. BN算法
 &emsp;为了保证恒等变换，BN算法在上面的归一化处理上加入了非常重要的一步，新引入了两个可以学习的参数，对归一化之后的数据进行下面的重构处理：  
-&emsp;![](http://i1156.photobucket.com/albums/p568/chengjunwen/batchNormaliza/reconstruct_zpsfgucgjwo.png)  
+&emsp;![](/images/old/reconstruct.png)  
 其中，
-![](http://i1156.photobucket.com/albums/p568/chengjunwen/batchNormaliza/para_zpspmplvgly.png)
+![](/images/old/para.png)
 是可以学习更新的参数，每一个神经元一对这样的参数。可以发现，BN算法可以当成一层网络加入到神经网络模型中，就和全链接层，激励层，卷积层，池化层等一样的。该层有两个可学习参数。而且当有：  
-&emsp;![](http://i1156.photobucket.com/albums/p568/chengjunwen/batchNormaliza/b_zpspulpgwuj.png)  
-&emsp;![](http://i1156.photobucket.com/albums/p568/chengjunwen/batchNormaliza/a_zpspnjuoysy.png)  
+&emsp;![](/images/old/b.png)  
+&emsp;![](/images/old/a.png)  
 该BN层可以恢复该层的输入层所学习到的特征表达。在训练过程中，两个参数不断更新学习，这样就可以恢复原始网络所学习的特征分布。  
 
 ### BN网络  
 
 &emsp;首先写一下BN算法的前向推导：  
-&emsp;![](http://i1156.photobucket.com/albums/p568/chengjunwen/batchNormaliza/BNalgorithm_zps9asvx2le.png)  
+&emsp;![](/images/old/BNalgorithm.png)  
 理论上，网络训练是在整个数据集上，归一化时，应该用整个数据集来计算均值方差进行归一化，但在SGD优化算法中，这样并不是一个可行的办法。退而求其次，论文里提出用mini-batch里面的数据来估计均值和方差。  
 
 #### 1. BN网络  
 
 &emsp;在全链接网络中，BN层通常在全链接层之后，激励层之前(激励层：sigmoid，tanh，ReLU等)。例如，本来全链接网络的forward如下所示：  
-&emsp;![](http://i1156.photobucket.com/albums/p568/chengjunwen/batchNormaliza/oldforward_zpszvokemez.png)  
+&emsp;![](/images/old/oldforward.png)  
 在加入BN层之后：  
-&emsp;![](http://i1156.photobucket.com/albums/p568/chengjunwen/batchNormaliza/BNforward_zpsutemmux8.png)  
+&emsp;![](/images/old/BNforward.png)  
 不过上面这个式子里的偏置参数 b 其实可以去掉，因为 b 会被均值归一化，重构时也有偏置函数。  
 
 #### 2. CNN网络中的BN  
 
 &emsp;CNN 中的BN层也是在卷积层之后，在激励层之前。不过有点不同，全链接网络当中，均值化是对每一个神经元进行均值化,但是如果CNN网络也对每一个神经元均值化，这样会产生非常多的
-![](http://i1156.photobucket.com/albums/p568/chengjunwen/batchNormaliza/para_zpspmplvgly.png)
+![](/images/old/para.png)
 参数对。比方说，如果某一层，有64个feature map，每一个map大小是60\**60，如果每一个神经元都归一化，那么就会有64\*60 \*60个参数对，这违背了CNN权值共享的精髓思想。考虑到权值共享，作者提出对整个feature map进行整体的归一化，把一个feature map当作一个神经元，这样就只有 64 对参数了。  
 
 

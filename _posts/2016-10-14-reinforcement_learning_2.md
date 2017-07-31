@@ -27,7 +27,7 @@ excerpt:
 &emsp;策略：π： S->A, ，指在t时刻，给定状态下，所能采取的动作的概率分布： 记作 π(a|s) = P(At=a | St=s),可以认为是状态到动作的映射，这也正是一个智能体(agent)所要学习的东西，策略完全决定了一个智能体(agent)的行为，MDP 的策略取决于当前状态。   
 &emsp;给定一个MDP， M= { S, A, Psa, R，γ}，以及策略 π，则状态序列S1，S2，... 就是一个马尔科负过程{S, Pπ}。状态和回报序列 S1，R1，S2，R2，... 就是一个马尔科夫回报过程 {S,Pπ, Rπ, γ},而且有：  
 
-![Pss'π](http://i1156.photobucket.com/albums/p568/chengjunwen/reinforcementearning2/Psspi_zpsalrxnsrl.png)  
+![Pss'π](/images/rel2/Psspi.png)  
 
 
 #### 值函数，value function
@@ -36,38 +36,38 @@ excerpt:
 
 如果定义衰减回报和如下式所示,其中Ri是第i-1步的立即回报：  
 
-![Gt](http://i1156.photobucket.com/albums/p568/chengjunwen/reinforcementearning2/Gt_zpsfjhe4rxo.png)  
+![Gt](/images/rel2/Gt.png)  
 其中γ是衰减因子，决定了长期回报的重要性，γ为0时忽略长期回报，为1时，所有时刻的回报同等重要。  
 定义一个状态值函数 Vπ(s),来表示在状态s 下，策略 π的长期影响产生的回报:   
 **状态值函数(state value function)**如下：  
-![vValue](http://i1156.photobucket.com/albums/p568/chengjunwen/reinforcementearning2/vvalue_zpsghkhwskt.gif)
+![vValue](/images/rel2/vvalue_zpsghkhwskt.gif)
 
 再定义一个**动作值函数(action value fucntion)**，表示在状态 s 下， 采取动作 a 之后依照 策略 π所产生的期望回报:   
 
-![qValue](http://i1156.photobucket.com/albums/p568/chengjunwen/reinforcementearning2/qvalue_zpszablsxdn.gif)  
+![qValue](/images/rel2/qvalue_zpszablsxdn.gif)  
 
 需要注意的是，在状态值函数里，只有初始状态s和策略π是给定的，初始动作是由s和π决定的，而在动作值函数里面，初始状态s和初始动作a，策略π都是给定的。  
 
 其实上面两个值函数的定义方程也就是贝尔曼方程(Bellman exception equation)。  
 根据状态s下，采取动作a之后的状态转移概率，可以发现 状态值函数和动作值函数之间的关系如下所示：
-![rela1](http://i1156.photobucket.com/albums/p568/chengjunwen/reinforcementearning2/rela1_zpszdmfneej.png)    
-![rela2](http://i1156.photobucket.com/albums/p568/chengjunwen/reinforcementearning2/rela2_zpsdgcnnd1v.png)  
+![rela1](/images/rel2/rela1.png)    
+![rela2](/images/rel2/rela2.png)  
 
 将关系式带入原贝尔曼方程，可以得到贝尔曼方程变种，算是展开了的贝尔曼方程。。   
-![bellman1](http://i1156.photobucket.com/albums/p568/chengjunwen/reinforcementearning2/rela4_zpsavbfaoaj.png)    
-![bellman2](http://i1156.photobucket.com/albums/p568/chengjunwen/reinforcementearning2/rela3_zpsg1t0uflz.png)    
+![bellman1](/images/rel2/rela4.png)    
+![bellman2](/images/rel2/rela3.png)    
 
 #### 优化值函数
 
 优化值函数，就是寻找在任意初始条件下，能够最大化值函数的策略π\*，  
 通过最大化状态值函数或者最大化动作值函数都可以:  
 
-![argmaxQ](http://i1156.photobucket.com/albums/p568/chengjunwen/reinforcementearning2/argmaxQ_zpsq82jad5z.png)  
+![argmaxQ](/images/rel2/argmaxQ.png)  
 
 关于贝尔曼优化方程(Bellman optimal equation)：
 
-![](http://i1156.photobucket.com/albums/p568/chengjunwen/reinforcementearning2/optimalV_zpssfjxoqwh.png)  
-![](http://i1156.photobucket.com/albums/p568/chengjunwen/reinforcementearning2/optimalQ_zpsjh5a3zfj.png)  
+![](/images/rel2/optimalV.png)  
+![](/images/rel2/optimalQ.png)  
 
 贝尔曼优化方程是非线性的，通过多次迭代求解贝尔曼优化方程可以求解MDP的最优策略。  
 

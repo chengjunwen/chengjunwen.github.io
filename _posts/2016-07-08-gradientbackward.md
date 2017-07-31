@@ -16,41 +16,41 @@ excerpt:
 #### FeedForward,前向传播过程  
 
 下面三个式子就是Logistic的前向传播过程， 其中 E 表示的就是代价函数  
-&emsp;![](http://i1156.photobucket.com/albums/p568/chengjunwen/tuidao/Lforward_zpsqsml8fka.png)  
+&emsp;![](/images/old/Lforward.png)  
 上式中，a表示全链接结果，a到y的计算是softmax函数，最后 E 则是代价函数的计算方法。softmax的输出被归一化到0-1之间，所有值相加是1，可以认为是预测结果的概率值  
 
 #### BackPropagate,反向传播
 &emsp;反向传播过程是计算权重w，b的梯度，也就是代价函数E对参数的偏导值。  
 
 根据链式求导法则一步步往前求导，过程如下所示：  
-&emsp;![](http://i1156.photobucket.com/albums/p568/chengjunwen/tuidao/deltaa_zpscsbbcsua.png)  
-&emsp;![](http://i1156.photobucket.com/albums/p568/chengjunwen/tuidao/Lback_zpshwkcvuun.png)  
+&emsp;![](/images/old/deltaa.png)  
+&emsp;![](/images/old/Lback.png)  
 最后，再求w，b的偏导就是：  
-&emsp;![](http://i1156.photobucket.com/albums/p568/chengjunwen/tuidao/delta_zpsg5une5lp.png)  
+&emsp;![](/images/old/delta.png)  
 
 求出偏导值后，用权重参数减去其对应的梯度，就是更新之后的权重参数：   
-&emsp;![](http://i1156.photobucket.com/albums/p568/chengjunwen/tuidao/wupdate_zpsksfikles.png)  
+&emsp;![](/images/old/wupdate.png)  
 
 ### MLP 求导  
 &emsp;MLP其实就是一个多层的全连接网络，基于上面的logistic的反向过程，我们可以用同样的方法来推导MLP的反向传播过程。  
 #### FeedForward, 前向传播过程  
 
 下面是一个两层全连接，一层sotfmax连接网络的前向传播过程，其他层次数的MLP类似：  
-&emsp;![](http://i1156.photobucket.com/albums/p568/chengjunwen/tuidao/Mforward_zpsjx5hwb5a.png)   
+&emsp;![](/images/old/Mforward.png)   
 其中f()表示激励函数，可以是sigmoid，tanh，ReLU等函数  
 
 #### Backpropagate, 反向传播
 
 我们首先假设 E 对第 l 层的 a 的偏导值如下：  
-&emsp;![](http://i1156.photobucket.com/albums/p568/chengjunwen/tuidao/deltadefine_zpsbd06uezb.png)    
+&emsp;![](/images/old/deltadefine.png)    
 
 由上面的logistic的推导过程，我们可以得到MLP的最后一个softmax层的推导如下：  
-&emsp;![](http://i1156.photobucket.com/albums/p568/chengjunwen/tuidao/firstdelta_zpsezk19zed.png)   
+&emsp;![](/images/old/firstdelta.png)   
 
 由上式，我们继续往后推导求第 l 层的 a 的偏导值：  
-&emsp;![](http://i1156.photobucket.com/albums/p568/chengjunwen/tuidao/nextdelta_zpslsdybscu.png)  
+&emsp;![](/images/old/nextdelta.png)  
 
 则第 l 层的w，b的偏导值如下：  
-&emsp;![](http://i1156.photobucket.com/albums/p568/chengjunwen/tuidao/netxwb_zpsveyhxarf.png)  
+&emsp;![](/images/old/netxwb.png)  
 
 利用链式求导法则，一直往后推导，就可以计算得到第一层的权重参数的偏导值，最后，反向推导过程完成。  

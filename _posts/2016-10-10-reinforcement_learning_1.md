@@ -24,12 +24,12 @@ excerpt:
 ### 强化学习
 
 &emsp;&emsp;强化学习： 是指一个智能体(agent)从环境(environment)中学习从状态(state)到动作(action)的映射。是一种无监督学习，没有label，而是反馈信号，而且反馈具有延时性，并不是即时的。比方说下棋，这一步所下的棋所产生的影响并不会完全的即时反馈出来，在未来的步骤中也会有所影响。强化学习组成如下：     
-![relearning](http://i1156.photobucket.com/albums/p568/chengjunwen/reinforcementearning2/relearning_zpsedzzwfib.png)     
+![relearning](/images/rel2/relearning.png)     
 
 1. agent,智能体(上图中的大脑)  
 2. environment,环境(上图中的地球)  
-3. ![Sta](http://i1156.photobucket.com/albums/p568/chengjunwen/reinforcementearning2/sat_zpsoivwxc1w.gif)：agent的状态(state)，表示agent自己内部的表现，这是强化学习学习时所用到的信息。  
-4. ![Ste](http://i1156.photobucket.com/albums/p568/chengjunwen/reinforcementearning2/sae_zps7x3vpkib.gif)：environment的状态,这是环境自己的状态，一般对agent不可见    
+3. ![Sta](/images/rel2/sat_zpsoivwxc1w.gif)：agent的状态(state)，表示agent自己内部的表现，这是强化学习学习时所用到的信息。  
+4. ![Ste](/images/rel2/sae_zps7x3vpkib.gif)：environment的状态,这是环境自己的状态，一般对agent不可见    
 4. At: 动作(action)，表示 agent在某状态 S 采取的动作      
 5. Rt; 回报函数(Reward)，在 S 状态， 采取 A 动作所获得的奖励。  
 6. Ot: 观测值(observation)。  
@@ -51,7 +51,7 @@ excerpt:
 环境分为两种：  
 
 1. fully observable Environment：这种就是agent能够直接观测到环境的状态，agent state = environment state = observation :      
-![allequal](http://i1156.photobucket.com/albums/p568/chengjunwen/reinforcementearning2/OAEstate_zpsang0tk5n.gif)    
+![allequal](/images/rel2/OAEstate_zpsang0tk5n.gif)    
 &emsp;这种情况下，就是一个马尔科夫决策过程(Markov decision process, MDP)。  
 
 2. partial observable Environment：agent不能直接观测到环境的状态，所以agent 和environment的状态不同。  
@@ -64,5 +64,5 @@ excerpt:
 ### 值函数, value function 
 
 &emsp;&emsp;value function，是对未来reward的预测，用来评估当前状态的好坏。  
-&emsp;&emsp;![vs](http://i1156.photobucket.com/albums/p568/chengjunwen/reinforcementearning2/vs_zpsajbcqwlh.png)  
+&emsp;&emsp;![vs](/images/rel2/vs.png)  
 

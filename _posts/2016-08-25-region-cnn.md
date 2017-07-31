@@ -9,7 +9,7 @@ excerpt:
 ### 简要介绍
 
 &emsp;论文笔记: `Region-based Convolutional Networks for Accurate Object Detection and Segmentation。Ross Girshick` 大神后来基于此篇又研究发表了很多论文， 提出了SPP net 和fast RNN。论文里提出用CNN网络来进行目标检测， 不同于图片分类， 目标检测需要在图片内对目标进行定位。这面临着两个问题，一是如何用deep network 定位，二是，如何用现有的少量数据训练一个更泛化的模型。  
-&emsp;对于第一个问题，有一种办法是将检测问题转换成回归问题，但这样检测多个目标时需要很复杂的解决办法或者特定假设每张图片里目标的数量。另一种方法是采用滑动窗口，但这样就需要所有的目标有共同的长宽比。 论文里最后采用的`recognition using regions`方式进行定位，这个方法已经被成功的运用在目标检测和语义分割上。RCNN的步骤主要是三步：  
+&emsp;对于第一个问题，有一种办法是将检测问题转换成回归问题，但这样检测多个目标时需要很复杂的解决办法或者特定假设每张图片里目标的数量。另一种方法是采用滑动窗口，但这样就需要所有的目标有共同的长宽比。 论文里最后采用的`recognition using regions`方式进行定位，这个方法已经被成功的运用在目标检测和语义分割上。old的步骤主要是三步：  
 
 1. 每张图片提取大约2000张的类别独立的 region proposal。  
 2. 采用CNN 从每个region proposal进行固定长度的特征提取。 
@@ -20,7 +20,7 @@ excerpt:
 ### R-CNN 基本策略
 
 &emsp;网络的基本流程如下图所示：  
-<p align="center"><img src="http://i1156.photobucket.com/albums/p568/chengjunwen/RCNN/Rcnn_zpsaigw4zw2.png"> </p>
+<p align="center"><img src="/images/old/Rcnn.png"> </p>
 
 #### 1. region proposal,候选框提取
 
@@ -29,7 +29,7 @@ excerpt:
 #### 2. feature extraction，特征提取
 
 &emsp;这一步是用一个CNN网络从region proposal中提取一个固定长度的特征向量。特征向量维度是4096维。CNN网络只接受固定大小的输入如227\*227，由于候选框的大小和长宽比不一定，所以首先要将不同大小的`region proposal` wrap成固定大小的。转换方法很多，论文里采用的最简单的方法,如下图：  
-<p align="center"><img src="http://i1156.photobucket.com/albums/p568/chengjunwen/RCNN/wrap_zpsndmqx5tp.png"> </p>
+<p align="center"><img src="/images/old/wrap.png"> </p>
 
 CNN网络训练提取特征：  
 

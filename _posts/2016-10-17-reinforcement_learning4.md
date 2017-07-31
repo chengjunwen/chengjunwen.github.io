@@ -28,7 +28,7 @@ excerpt:
 &emsp;策略估计，就是要学习策略对应的状态值函数Vπ(S)。MC分为first visit和every visit，first visit是只记录一个eposide里面状态 s 的第一次访问，every visit则记录每一次访问。下面讲一下 first visit MC 。
 Gt是当前状态的长期总回报值：
 
-![Gt](http://i1156.photobucket.com/albums/p568/chengjunwen/reinforcementearning2/Gt_zpsfjhe4rxo.png)     
+![Gt](/images/rel2/Gt.png)     
 估计状态 s 的值函数:    
 
 1. 对于每一个eposide里面，状态 s 的第一次访问:    
@@ -42,17 +42,17 @@ every visit的差别只需要把第一访问改成每一次访问即可
 **Incremental Monte Carlo Update:**      
 一个序列 x1,x2,x3.....的均值 u1，u2, u3,...计算方式有如下简化：  
 
-![uk](http://i1156.photobucket.com/albums/p568/chengjunwen/reinforcement3/transi_zpsr0dpvkhj.gif)    
+![uk](/images/rel3/transi_zpsr0dpvkhj.gif)    
 
 从这个式子考虑发现，其实 MC methods的更新也有类似的变种:   
 估计状态 s 的值函数:    
 
 1. 每一个状态 St 的,其长期总回报函数为Gt,访问到St时：   
 	* 增加访问计数：N(St) <—— N(St) + 1     
-	* 更新状态值函数：![](http://i1156.photobucket.com/albums/p568/chengjunwen/reinforcement3/MC1_zps7yy1ytp0.gif)    
+	* 更新状态值函数：![](/images/rel3/MC1_zps7yy1ytp0.gif)    
 2. 当N(s)——>∞,V(s)——> Vπ(s)    
 
-状态更新的式子也可以用这个式子： ![](http://i1156.photobucket.com/albums/p568/chengjunwen/reinforcement3/MC2_zpscoq58tga.gif) ,α 是学习率。   
+状态更新的式子也可以用这个式子： ![](/images/rel3/MC2_zpscoq58tga.gif) ,α 是学习率。   
 
 ### 2. 时间差分法(Temporal different Learning, TD leaning)
 
@@ -63,15 +63,15 @@ every visit的差别只需要把第一访问改成每一次访问即可
 
 1. 每一个状态 St 的,其长期总回报函数为Gt,每次访问到St时：   
 	* 增加访问计数：N(St) <—— N(St) + 1     
-	* 更新状态值函数：![](http://i1156.photobucket.com/albums/p568/chengjunwen/reinforcement3/TD_zpskzbnjfiu.gif)  
+	* 更新状态值函数：![](/images/rel3/TD_zpskzbnjfiu.gif)  
 2. 当N(s)——>∞,V(s)——> Vπ(s)    
 
 在这个状态值更新式里：  
-![](http://i1156.photobucket.com/albums/p568/chengjunwen/reinforcement3/TDtarget_zpstmkag0g4.gif) 是TD target     
-![](http://i1156.photobucket.com/albums/p568/chengjunwen/reinforcement3/TDerror_zpsqekk7ch2.gif) 是TD error   
+![](/images/rel3/TDtarget_zpstmkag0g4.gif) 是TD target     
+![](/images/rel3/TDerror_zpsqekk7ch2.gif) 是TD error   
 
 **n-step TD:**    
-<p><img src="http://i1156.photobucket.com/albums/p568/chengjunwen/reinforcement3/TDnstep_zpsw9vwkcdo.png" width="800" height="300"></p>   
+<p><img src="/images/rel3/TDnstep.png" width="800" height="300"></p>   
 &emsp;n-step TD对未来预测采取 n 步，总回报 G也是计算的n步的回报值。从上面的式子和图可以发现：  
 
 1. n=1时，总回报值就是 TD 算法计算的总回报值。     
@@ -79,7 +79,7 @@ every visit的差别只需要把第一访问改成每一次访问即可
 
 **TD(λ):**    
 如果考虑到给 每个 step 的回报加上权重值然后相加来作为总回报值，如下图所示：  
-<p><img src="http://i1156.photobucket.com/albums/p568/chengjunwen/reinforcement3/TDlamda_zpsm0etervh.png" width="700" height="300"></p>    
+<p><img src="/images/rel3/TDlamda.png" width="700" height="300"></p>    
 这样子的总回报值是结合了所有step的回报，利用 λ来评估每个step的回报所占的比重。  
 从上图左边的链图里可以发现，有两个特殊情况：  
 
