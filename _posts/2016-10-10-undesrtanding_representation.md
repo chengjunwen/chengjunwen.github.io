@@ -64,7 +64,7 @@ excerpt:
 图b，可以获得车子的不同颜色和不同角度(车前车后)多个facet的可视化。   
 
 &emsp;对于AM算法可视化结果有片段重复现象,利用 center-biased regularization可以改善这个现象，具体做法就是先生成一个模糊的中心对象，然后微调目标的中心像素点来生成清新的中心固定的对象，如下图所示：  
-<p align='center'><img src='/images/old/center.png'></p>  
+<p align='center'><img src='/images/old/center_biased.png'></p>  
 
 参考论文：
 

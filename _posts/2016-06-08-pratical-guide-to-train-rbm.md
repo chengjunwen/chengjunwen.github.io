@@ -30,15 +30,15 @@ excerpt:
 * momentum
 
 &emsp;momentum在SGD算法中可以有效的増加学习速度，一般大小设为0.9左右。这个相当于是加入了惯性的思想  
-&emsp; v ← m*v − η(∂E/∂wi)  
-&emsp; wi ← wi + v  
+$$ v ← m\*v − η(∂E/∂wi)  $$
+$$ wi ← wi + v  $$
 其中m既是指momentum，v 是速度   
 
 * 2.4 weight-decay  
 
 &emsp;weight decay是指对较大的权重参数值加以惩罚措施， 具体上是指在gradient上就加入一个多余项。最简单的惩罚措施是L2正则化，可以有效的避免过拟合，下面是L2正则化：  
 
-&emsp;wi ← wi − η(∂E/∂wi)−ηλwi  
+$$wi ← wi − η(∂E/∂wi)−ηλwi  $$
 
 其中 η 是指学习率 lr, λ则是L2参数, λ的大小一般在0.01——0.00001之间。
 
