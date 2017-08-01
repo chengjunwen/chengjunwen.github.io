@@ -5,6 +5,7 @@ date:   2016-06-08 16:25:46 +0800
 categories: DeepLearning
 excerpt:
 ---
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
 
 ### RBM训练的实用指南
 
