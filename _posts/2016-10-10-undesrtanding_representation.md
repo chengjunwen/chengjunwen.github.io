@@ -17,9 +17,9 @@ excerpt:
 上图中，第一行的三列分别是用AM对DBN网络的 1st layer、2nd layer、3rdlayer的36个节点单元的可视化结果。  
 然后 第二行的三列分别是用AM对SDAE网络的 1st layer、2nd layer、3rdlayer的36个节点单元的可视化结果。  
 
-### 2. code inversion
+### 2. inverting representations
 
-&emsp;code inversion,这个方法和AM算法有着异曲同工之妙，对于一个已经训练好的参数固定的网络，假设某个隐藏层的表达representation函数为 Φ，则Φ是θ和输入X的函数。给定网络参数θ和待逆推的表达 Φ0=Φ(x0)，来计算一个输入image sample,使这个输入图片 x 所生成的表达和给定的表达 Φ 尽量相似。最小化下面这个公式：  
+&emsp;inverting representations, 这个方法和AM算法有着异曲同工之妙，对于一个已经训练好的参数固定的网络，假设某个隐藏层的表达representation函数为 Φ，则Φ是θ和输入X的函数。给定网络参数θ和待逆推的表达 Φ0=Φ(x0)，来计算一个输入image sample,使这个输入图片 x 所生成的表达和给定的表达 Φ 尽量相似。最小化下面这个公式：  
 
 ![](/images/old/code_inversion.png)  
 
