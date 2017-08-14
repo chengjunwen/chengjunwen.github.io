@@ -40,11 +40,11 @@ excerpt:
 其中γ是衰减因子，决定了长期回报的重要性，γ为0时忽略长期回报，为1时，所有时刻的回报同等重要。  
 定义一个状态值函数 Vπ(s),来表示在状态s 下，策略 π的长期影响产生的回报:   
 **状态值函数(state value function)**如下：  
-![vValue](/images/rel2/vvalue_zpsghkhwskt.gif)
+![vValue](/images/rel2/vvalue.gif)
 
 再定义一个**动作值函数(action value fucntion)**，表示在状态 s 下， 采取动作 a 之后依照 策略 π所产生的期望回报:   
 
-![qValue](/images/rel2/qvalue_zpszablsxdn.gif)  
+![qValue](/images/rel2/qvalue.gif)  
 
 需要注意的是，在状态值函数里，只有初始状态s和策略π是给定的，初始动作是由s和π决定的，而在动作值函数里面，初始状态s和初始动作a，策略π都是给定的。  
 
