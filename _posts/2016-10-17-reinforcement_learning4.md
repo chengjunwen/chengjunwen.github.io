@@ -42,17 +42,17 @@ every visit的差别只需要把第一访问改成每一次访问即可
 **Incremental Monte Carlo Update:**      
 一个序列 x1,x2,x3.....的均值 u1，u2, u3,...计算方式有如下简化：  
 
-![uk](/images/rel3/transi_zpsr0dpvkhj.gif)    
+![uk](/images/rel3/transi.gif)    
 
 从这个式子考虑发现，其实 MC methods的更新也有类似的变种:   
 估计状态 s 的值函数:    
 
 1. 每一个状态 St 的,其长期总回报函数为Gt,访问到St时：   
 	* 增加访问计数：N(St) <—— N(St) + 1     
-	* 更新状态值函数：![](/images/rel3/MC1_zps7yy1ytp0.gif)    
+	* 更新状态值函数：![](/images/rel3/MC1.gif)    
 2. 当N(s)——>∞,V(s)——> Vπ(s)    
 
-状态更新的式子也可以用这个式子： ![](/images/rel3/MC2_zpscoq58tga.gif) ,α 是学习率。   
+状态更新的式子也可以用这个式子： ![](/images/rel3/MC2.gif) ,α 是学习率。   
 
 ### 2. 时间差分法(Temporal different Learning, TD leaning)
 
@@ -63,12 +63,12 @@ every visit的差别只需要把第一访问改成每一次访问即可
 
 1. 每一个状态 St 的,其长期总回报函数为Gt,每次访问到St时：   
 	* 增加访问计数：N(St) <—— N(St) + 1     
-	* 更新状态值函数：![](/images/rel3/TD_zpskzbnjfiu.gif)  
+	* 更新状态值函数：![](/images/rel3/TD.gif)  
 2. 当N(s)——>∞,V(s)——> Vπ(s)    
 
 在这个状态值更新式里：  
-![](/images/rel3/TDtarget_zpstmkag0g4.gif) 是TD target     
-![](/images/rel3/TDerror_zpsqekk7ch2.gif) 是TD error   
+![](/images/rel3/TDtarget.gif) 是TD target     
+![](/images/rel3/TDerror.gif) 是TD error   
 
 **n-step TD:**    
 <p><img src="/images/rel3/TDnstep.png" width="800" height="300"></p>   
