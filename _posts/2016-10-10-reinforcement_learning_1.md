@@ -28,8 +28,8 @@ excerpt:
 
 1. agent,智能体(上图中的大脑)  
 2. environment,环境(上图中的地球)  
-3. ![Sta](/images/rel2/sat_zpsoivwxc1w.gif)：agent的状态(state)，表示agent自己内部的表现，这是强化学习学习时所用到的信息。  
-4. ![Ste](/images/rel2/sae_zps7x3vpkib.gif)：environment的状态,这是环境自己的状态，一般对agent不可见    
+3. ![Sta](/images/rel2/sat.gif)：agent的状态(state)，表示agent自己内部的表现，这是强化学习学习时所用到的信息。  
+4. ![Ste](/images/rel2/sae.gif)：environment的状态,这是环境自己的状态，一般对agent不可见    
 4. At: 动作(action)，表示 agent在某状态 S 采取的动作      
 5. Rt; 回报函数(Reward)，在 S 状态， 采取 A 动作所获得的奖励。  
 6. Ot: 观测值(observation)。  
@@ -51,7 +51,7 @@ excerpt:
 环境分为两种：  
 
 1. fully observable Environment：这种就是agent能够直接观测到环境的状态，agent state = environment state = observation :      
-![allequal](/images/rel2/OAEstate_zpsang0tk5n.gif)    
+![allequal](/images/rel2/OAEstate.gif)    
 &emsp;这种情况下，就是一个马尔科夫决策过程(Markov decision process, MDP)。  
 
 2. partial observable Environment：agent不能直接观测到环境的状态，所以agent 和environment的状态不同。  
