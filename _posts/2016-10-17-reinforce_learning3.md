@@ -26,9 +26,9 @@ excerpt:
 
 上一节提到了对于给定策略，如何计算状态值函数Vπ和动作值函数qπ，方程式如下：  
 
-![](/images/rel3/vvalue_zpsis1rfzn2.gif)  
+![](/images/rel3/vvalue.gif)  
 
-![](/images/rel3/qvalue_zpsomknernn.gif)  
+![](/images/rel3/qvalue.gif)  
 
 这就是bellman exception equation， 从式子可以看出来，当前状态的值函数Vπ和下一状态的值函数相关。  
 
