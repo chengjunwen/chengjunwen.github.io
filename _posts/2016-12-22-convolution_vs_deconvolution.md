@@ -17,15 +17,15 @@ excerpt:
 
 1. full卷积  
 &emsp;full卷积很像上述所提到的卷积， iamge(A)和kernel filter(B)卷积（A\*B），就是把B翻转然后滑动累积和A的积分指。由于A是图片，这样就意味着要对A进行padding，卷积计算从B和A的最边缘有交集就开始计算，所以也叫 full convolution。full conv之后图片的大小会比 A图大。如下图所示(盗图，懒得画图了).  
-	![/images/conv/full.png)
+	![]/images/conv/full.png)
     
 2. same 卷积  
 &emsp;将图 A 和 B 进行 same 卷积，卷积之后 A 图的大小不变，所以就叫 same 卷积。s卷积计算的起始点是从 B 图的中心和 A 图有交集开始，same 卷积如下图所示，所以 same 卷积也会对 A 图进行padding。  
-    ![/images/conv/same.png)
+    ![]/images/conv/same.png)
 
 3. valid 卷积  
 &emsp;valid 卷积不需要对图 A 进行padding， 也就是大家平常看CNN 网络讲解图时常用的卷积形式，卷积计算从 B 被 A 完全交集开始计算， 如下图所示：  
-    ![/images/conv/valid.png)
+    ![]/images/conv/valid.png)
 
 %emsp;关于 三种卷积对于输出map大小的影响，假设 输入 iamge 大小是 N\*N ,kernel filter大小是 M\*M,卷积时步长为s，如果padding的长度是p，则卷积之后map大小是 [ (N-M+2\*p)/s +1 ] \* [ (N-M+2\*p)/s +1 ]，这个公式可以套到下面三种卷积里面。  
 
